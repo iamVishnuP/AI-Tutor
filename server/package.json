@@ -1,0 +1,28 @@
+{
+  "name": "ai-tutor-cbse-server",
+  "version": "1.0.0",
+  "description": "Backend API for AI Tutor - CBSE Class 10 Mathematics Self Evaluation System",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "lint": "node --check src/server.js && node --check src/routes/sessionRoutes.js && node --check src/services/llmService.js && node --check src/services/validationService.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "multer": "^2.0.2",
+    "pdf-parse": "^1.1.1",
+    "tesseract.js": "^6.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}
