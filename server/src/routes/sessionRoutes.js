@@ -85,8 +85,8 @@ router.post(
         throw new HttpError(400, questionValidation.reason);
       }
 
-      const questionContext = retrieveRelevantContext(session.chunks, question, 3);
-      if (!questionContext) {
+      const retrievalResult = retrieveRelevantContext(session.chunks, question, 3);
+      if (!retrievalResult.context || retrievalResult.score === 0) {
         throw new HttpError(
           400,
           "This question does not appear to match the uploaded NCERT Mathematics textbook context. Please upload a valid textbook question."
@@ -97,7 +97,9 @@ router.post(
 
       res.json({
         question,
-        message: "Question received. Please upload or type your answer."
+        message: !retrievalResult.isConfident
+          ? "This question could not be confidently matched to the uploaded textbook. Proceeding with available context."
+          : "Question received. Please upload or type your answer."
       });
     } finally {
       await removeFile(req.file?.path);
@@ -133,8 +135,8 @@ router.post(
       }
 
       const query = `${session.question}\n${answer}`;
-      const context = retrieveRelevantContext(session.chunks, query);
-      if (!context) {
+      const retrievalResult = retrieveRelevantContext(session.chunks, query);
+      if (!retrievalResult.context || retrievalResult.score === 0) {
         throw new HttpError(
           400,
           "Unable to find relevant NCERT context for this question and answer. Please check that both inputs belong to the uploaded textbook."
@@ -144,7 +146,7 @@ router.post(
       const prompt = buildEvaluationPrompt({
         question: session.question,
         answer,
-        context
+        context: retrievalResult.context
       });
       const evaluation = await evaluateAnswer(prompt);
 
@@ -152,7 +154,7 @@ router.post(
 
       res.json({
         answer,
-        contextFound: Boolean(context),
+        contextFound: Boolean(retrievalResult.context),
         evaluation
       });
     } finally {
