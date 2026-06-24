@@ -294,7 +294,7 @@ Return ONLY valid JSON:
 ────────────────────────────────────────
 
 {
-"marks": "number (e.g. 3/5)",
+"marks": "STRING (e.g. '3/5')",
 "grade": "A/B/C/D/F",
 "feedback": "Detailed evaluation explaining what is correct, what is incorrect, and why marks were awarded.",
 "missing_points": [
@@ -308,6 +308,7 @@ Return ONLY valid JSON:
 Rules:
 
 * Output valid JSON only.
+* The 'marks' field MUST be a string enclosed in quotes (e.g. "3/5"). Do NOT output unquoted fractions like 3/5.
 * No markdown.
 * No extra text.
 * No code fences.
