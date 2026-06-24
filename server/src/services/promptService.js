@@ -88,15 +88,49 @@ COMPUTATIONAL QUESTIONS
 
 For computational questions:
 
-* Prioritize mathematical correctness.
-* Award marks for correct calculations and intermediate steps.
-* Do NOT require theoretical explanations unless explicitly asked.
-* Do NOT require general proofs if the question only asks to verify for specific numbers.
-* Do NOT penalize students for not writing definitions or concepts that were not requested.
-* Minor omissions in explanation should result in only small deductions.
+* Prioritize mathematical correctness and the correctness of intermediate calculations.
 
-Examples:
-If a student correctly computes HCF and LCM but forgets to explicitly compare both products, deduct only a small amount.
+* Award marks for:
+
+  * Correct formulas
+  * Correct substitutions
+  * Correct calculations
+  * Correct intermediate steps
+  * Correct final answers
+  * Meaningful mathematical progress.
+
+* Do NOT require theoretical explanations unless explicitly asked by the question.
+
+* Do NOT require:
+
+  * Definitions
+  * General proofs
+  * Derivations
+  * Conceptual explanations
+    unless the question explicitly asks for them.
+
+* Do NOT penalize students for concise but mathematically correct solutions.
+
+* If the student has shown sufficient working to obtain the answer, do not request additional explanations merely for completeness.
+
+* For verification questions:
+
+  * Evaluate only the verification requested in the question.
+  * Do NOT ask for a general proof if the question only requires verification for specific values.
+  * Minor omissions in explicitly writing equality statements should result in only small deductions.
+
+* If a student correctly computes HCF and LCM and substantially completes the verification but omits an explicit comparison statement, deduct only a small amount.
+
+* CBSE examinations generally reward correct calculations and necessary working steps, not lengthy explanations unless explicitly requested.
+
+* Missing calculations that are necessary to establish the final conclusion should reduce marks.
+
+* Computational questions should primarily be graded on:
+
+  1. Mathematical correctness.
+  2. Completeness of calculations.
+  3. Correct application of formulas and procedures.
+  4. Validity of the final answer.
 
 ────────────────────────────────────────
 PROOF-BASED QUESTIONS
@@ -109,6 +143,7 @@ For proof questions:
 * Missing reasoning should reduce marks.
 * Conclusions must follow logically.
 * Partial credit should be awarded for correct intermediate reasoning.
+* Do not assign zero marks when the student demonstrates the correct approach but fails to complete the proof.
 
 ────────────────────────────────────────
 CONCEPTUAL QUESTIONS
@@ -119,6 +154,7 @@ For conceptual questions:
 * Accuracy of explanation matters.
 * Definitions and terminology matter.
 * Clarity of reasoning matters.
+* Minor wording differences should not be penalized if the mathematical meaning is correct.
 
 ────────────────────────────────────────
 PARTIAL MARKING POLICY
@@ -187,31 +223,61 @@ EVALUATION RULES
 
 2. Penalize:
 
-   * Incorrect reasoning
-   * Major missing steps
-   * Mathematical errors
-   * Invalid conclusions.
+* Incorrect reasoning.
+* Major missing steps.
+* Mathematical errors.
+* Invalid conclusions.
+* Missing calculations that are essential to arrive at the answer.
 
 3. Do NOT penalize:
 
-   * Missing theory not asked in the question.
-   * Missing general proofs when only verification is required.
-   * Missing definitions when not required.
+* Missing theory not asked in the question.
+* Missing general proofs when only verification is required.
+* Missing definitions when not required.
+* Missing explanations that are not explicitly requested.
+* Concise but mathematically correct solutions.
 
-4. Missing points and suggestions MUST be directly related to the question asked.
+4. Missing points and suggestions MUST be directly related to the requirements of the original question.
 
 5. Never ask for:
 
-   * General proofs
-   * Additional explanations
-   * Definitions
-     unless explicitly required by the question.
+* General proofs
+* Additional explanations
+* Definitions
+* Theoretical discussions
+  unless explicitly required by the question.
 
-6. Feedback should explain:
+6. Suggestions must only address:
 
-   * What is correct.
-   * What is incorrect.
-   * Why marks were awarded.
+* Missing calculations.
+* Missing reasoning required by the question.
+* Mathematical errors.
+* Incomplete proofs.
+* Incomplete verification.
+* Incorrect conclusions.
+
+7. Do NOT suggest:
+
+* Additional theory not required by the question.
+* Definitions not requested.
+* General proofs when not requested.
+* Explanations that would not normally affect CBSE marking.
+
+8. Feedback should explain:
+
+* What is correct.
+* What is incorrect.
+* Why marks were awarded.
+* Why marks were deducted.
+
+9. The evaluation must be:
+
+* Strict.
+* Fair.
+* Consistent.
+* Proportional to the student's demonstrated understanding.
+
+10. When in doubt, prefer awarding reasonable partial marks for correct mathematical work rather than penalizing the student for omitted explanations that were never required by the question.
 
 ────────────────────────────────────────
 Question:
@@ -230,7 +296,7 @@ Return ONLY valid JSON:
 {
 "marks": "number (e.g. 3/5)",
 "grade": "A/B/C/D/F",
-"feedback": "Detailed evaluation.",
+"feedback": "Detailed evaluation explaining what is correct, what is incorrect, and why marks were awarded.",
 "missing_points": [
 "Missing concepts or steps"
 ],
@@ -246,8 +312,8 @@ Rules:
 * No extra text.
 * No code fences.
 * JSON must be parseable.
-* Missing points should be concise.
-* Suggestions should be actionable.
+* Missing points should be concise and actionable.
+* Suggestions should be practical and directly related to the question.
 * Grade strictly according to CBSE standards.
 * Be strict, fair, and consistent like a professor with 15+ years of experience evaluating board examination answer sheets.`;
   }
